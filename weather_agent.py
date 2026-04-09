@@ -69,7 +69,7 @@ agent = create_agent(
 response = agent.invoke(
     {"messages": [{"role": "user", "content": "外面的天气怎么样？"}]},
     config={"configurable": {"thread_id": "1"}},
-    context=Context(user_id="2")
+    context=Context(user_id="1")
 )
 
 # 打印结果

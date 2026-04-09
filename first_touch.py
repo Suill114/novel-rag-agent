@@ -65,19 +65,22 @@ print(f"文档已切分为 {len(chunks)} 个文本块")
 
 print("正在构建向量检索库...")
 print("提示：如果下载速度慢，请在 .env 文件中设置 HF_TOKEN 来提高下载速度")
-print("正在加载嵌入模型 BAAI/bge-small-zh...")
+print("正在加载嵌入模型 BAAI/bge-small-zh（离线模式）...")
 
 try:
-    #向量语义搜索（可以理解文字含义），本地检索，云端生成答案
+    # 向量语义搜索（可以理解文字含义），本地检索，离线加载已下载模型
     embeddings = HuggingFaceEmbeddings(
         model_name="BAAI/bge-small-zh",
-        model_kwargs={'device': 'cpu'},
+        model_kwargs={
+            'device': 'cpu',
+            'local_files_only': True,
+        },
         encode_kwargs={'normalize_embeddings': True}
     )
     print("嵌入模型加载成功！")
 except Exception as e:
     print(f"加载嵌入模型失败: {e}")
-    print("请检查网络连接或设置 HF_TOKEN 环境变量")
+    print("请检查本地模型是否已下载到 Hugging Face 缓存目录")
     exit(1)
 
 try:
