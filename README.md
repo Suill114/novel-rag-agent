@@ -14,16 +14,14 @@
 ---
 
 ## 📸 效果展示
+*提问界面*
+![提问界面](images/question.png)<br>
 
-![提问界面](images/question.png)
-*提问界面*<br>
-
-![回答效果](images/answer.png)
-*回答效果*<br>
-
-![Agent 思考过程](images/agent_thought.png)
 *Agent 思考过程（verbose 模式）*
+![Agent 思考过程](images/agent_thought.png)
 
+*回答效果*
+![回答效果](images/answer.png)<br>
 ---
 
 ## 🛠️ 技术栈
